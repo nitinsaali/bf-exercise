@@ -1,0 +1,9 @@
+{
+    "TITLE": "Profile",
+    "USER_INFO": {
+        "USER_NAME": "Username",
+        "EMAIL": "Email",
+        "FIRST_NAME": "First Name",
+        "LAST_NAME": "Last Name"
+    }
+}

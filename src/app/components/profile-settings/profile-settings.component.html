@@ -1,0 +1,48 @@
+<div class="card w-50 mx-auto mt-5">
+    <h5 class="card-header">{{'TITLE' | translate}}</h5>
+    <div class="card-body">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <label for="username" class="col-form-label"><b>{{'USER_INFO.USER_NAME' | translate}}</b> : </label>
+            </div>
+            <div class="col-auto">
+                <label for="username" class="col-form-label">{{ user?.username }}</label>
+            </div>
+          </div>
+
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <label for="email" class="col-form-label"><b>{{'USER_INFO.EMAIL' | translate}}</b> : </label>
+            </div>
+            <div class="col-auto">
+                <label for="username" class="col-form-label">{{ user?.email }}</label>
+            </div>
+          </div>
+          <form [formGroup]="form" (ngSubmit)="save()">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                <label for="firstname" class="col-form-label"><b>{{'USER_INFO.FIRST_NAME' | translate}}</b> : </label>
+                </div>
+                <div class="col-auto">
+                <input type="text" class="form-control form-control-sm" formControlName="firstName" aria-describedby="firstname">
+                </div>
+            </div>
+
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                <label for="lastname" class="col-form-label"><b>{{'USER_INFO.LAST_NAME' | translate}}</b> : </label>
+                </div>
+                <div class="col-auto">
+                <input type="lastname" class="form-control form-control-sm" formControlName="lastName" aria-describedby="lastname">
+                </div>
+            </div>
+          
+          <button type="submit"
+            [disabled]="form.invalid"
+            class="btn btn-sm btn-outline-primary"
+            tooltipClass="custom-tooltip">Save</button>
+
+            <p class="fw-normal" [ngClass]="message.class" *ngIf="message.show">{{ message.message }}</p>
+          </form>  
+    </div>
+  </div>
